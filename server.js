@@ -48,30 +48,6 @@ app.get('/play', function(req, res){
   res.render('main.jade', {title: 'Guess the Word'});
 });
 
-app.get('/hiscores', function(request, response) {
-  db.view('top_scores', 'top_scores_index', function(err, body) {
-  if (!err) {
-    var scores = [];
-      body.rows.forEach(function(doc) {
-        scores.push(doc.value);		      
-      });
-      response.send(JSON.stringify(scores));
-    }
-  });
-});
-
-app.get('/save_score', function(request, response) {
-  var name = request.query.name;
-  var score = request.query.score;
-
-  var scoreRecord = { 'name': name, 'score' : parseInt(score), 'date': new Date() };
-  db.insert(scoreRecord, function(err, body, header) {
-    if (!err) {       
-      response.send('Successfully added one score to the DB');
-    }
-  });
-});
-
 var server = app.listen(port, function() {
   console.log('Server running on port %d on host %s', server.address().port, host);
 });
@@ -122,4 +98,28 @@ app.get('/randomword', function(request, response) {
       });								
     });
   }).end();
+});
+
+app.get('/hiscores', function(request, response) {
+  db.view('top_scores', 'top_scores_index', function(err, body) {
+  if (!err) {
+    var scores = [];
+      body.rows.forEach(function(doc) {
+        scores.push(doc.value);		      
+      });
+      response.send(JSON.stringify(scores));
+    }
+  });
+});
+
+app.get('/save_score', function(request, response) {
+  var name = request.query.name;
+  var score = request.query.score;
+
+  var scoreRecord = { 'name': name, 'score' : parseInt(score), 'date': new Date() };
+  db.insert(scoreRecord, function(err, body, header) {
+    if (!err) {       
+      response.send('Successfully added one score to the DB');
+    }
+  });
 });
