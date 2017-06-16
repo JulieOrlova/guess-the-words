@@ -9,7 +9,7 @@ var http = require('http');
 var host = "localhost";
 var port = 3030;
 var cloudant = {
-	url : "https://0be36664-84dc-4ce0-b9f4-8a2487abad43-bluemix:220b7eeea49ddc640490803d1ae712f0e342f875241d30870b439e4c69c1ff6a@0be36664-84dc-4ce0-b9f4-8a2487abad43-bluemix.cloudant.com"		 		 
+	url : "https://0a69ec89-d5ed-4db8-9e01-74ec13ae87f8-bluemix:cd24145e1fdcd8c5201af5d8f221bc12297216d9e9b102d59b3a50fa14b4b1df@0a69ec89-d5ed-4db8-9e01-74ec13ae87f8-bluemix.cloudant.com"		 		 
 };
 
 //for bluemix host decalaration
