@@ -8,6 +8,9 @@ var http = require('http');
 
 var host = "localhost";
 var port = 3030;
+var cloudant = {
+	url : "https://0be36664-84dc-4ce0-b9f4-8a2487abad43-bluemix:220b7eeea49ddc640490803d1ae712f0e342f875241d30870b439e4c69c1ff6a@0be36664-84dc-4ce0-b9f4-8a2487abad43-bluemix.cloudant.com"		 		 
+};
 
 //for bluemix host decalaration
 if (process.env.hasOwnProperty("VCAP_SERVICES")) {
