@@ -6,6 +6,18 @@ html(lang="en")
     link(rel="stylesheet", href="css/main.css", type="text/css")
   body(style="background-image:url(/images/background.jpg)")
 
+    div(id="name-dialog", class="modal fade")
+  div(class="modal-dialog")
+    div(class="modal-content")
+      div(class="modal-header")
+        h4(class="modal-title")
+      div(class="modal-body")
+        div(class="divDialogElements")
+          label(for="name-input", style="display:table-cell; width:100%") Enter your name:
+          input(class="xlarge", id="name-input", name="xlInput", type="text", style="display:table-cell; width:100%")            				
+      div(class="modal-footer")
+        button(type="button", class="btn btn-ok") OK
+        
     div(class="container")
       h1(class="game-text") Guess the secret word!
       div(class="row")
